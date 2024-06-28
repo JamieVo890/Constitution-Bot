@@ -5,3 +5,5 @@ python-dotenv
 pypdf
 langchain-community 
 langchain-core
+torch 
+sentence-transformers
