@@ -30,7 +30,6 @@ class ConstitutionBot:
         Chat History: 
         Question: What is the power of the prime minister?
         Your response: What is the power of the prime minister?
-        Note: You are returning  "What is the power of the prime minister?", not "Rephrased Question:  What is the power of the prime minister?"
         ```
 
         ```
@@ -40,7 +39,13 @@ class ConstitutionBot:
         AI: The prime minister has many powers
         Question: What else can he do?
         Your response: What else can the prime minister do? 
-        Note: You are returning What else can the prime minister do?, not Rephrased Question: What else can the prime minister do?
+        ```
+        Example 3: 
+        Chat History: 
+        Human: Who appoints the prime minister in a no contest?
+        AI: The govenor general
+        Question: What is their role?
+        Your response: What is the govenor general's role? 
         ```
 
         With those examples, here are the actual chat history and input questions:
@@ -73,7 +78,7 @@ class ConstitutionBot:
     def query(self, query):
         standalone_query = self.rewrite_query(query)
         context = self.retrieve_documents(standalone_query)
-    
+        
 
         final_prompt_str = """
         [INST] 
@@ -81,7 +86,8 @@ class ConstitutionBot:
 
         Context: {context}
         Chat History: {chat_history}
-        Question: {question}
+        
+        {question}
         [/INST] 
         """
 
