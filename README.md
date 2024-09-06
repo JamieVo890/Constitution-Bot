@@ -19,4 +19,4 @@ The following libraries are required to run this code:
 ```/python ConstitutionBot.py```
 
 Make sure to include a <i>.env</i> file containing your Open AI key in the same folder as the python file. For example in the <i>.env</i>  file:
-```OPENAI_API_KEY=Your_key_here```
+<br>```OPENAI_API_KEY=Your_key_here```
