@@ -18,7 +18,6 @@ class ConstitutionBot:
             temperature=0,
             model_name=model_name
         )
-        pass
     
     def rewrite_query(self, query):
         rewriting_prompt_str = """
